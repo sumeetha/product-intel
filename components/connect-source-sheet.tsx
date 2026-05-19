@@ -40,27 +40,27 @@ const typeMeta: Record<
   web: {
     label: "Web URL",
     blurb: "Crawl a page or site and keep it in sync.",
-    defaultName: "competitor.com/blog",
+    defaultName: "codesignal.com/blog",
   },
   document: {
     label: "Document",
     blurb: "Upload PDFs, decks, exports, or transcripts.",
-    defaultName: "Quarterly report.pdf",
+    defaultName: "Q2 recruiter survey.pdf",
   },
   feed: {
     label: "Data Feed",
     blurb: "Pull from RSS, Atom, JSON, or REST endpoints.",
-    defaultName: "Linear Changelog RSS",
+    defaultName: "CodeSignal changelog RSS",
   },
   video: {
     label: "Video",
     blurb: "Index recordings, webinars, or earnings calls.",
-    defaultName: "Earnings call recording",
+    defaultName: "Cosmo launch webinar",
   },
   audio: {
     label: "Audio",
     blurb: "Transcribe call recordings and podcasts.",
-    defaultName: "Customer call",
+    defaultName: "Enterprise QBR call",
   },
 };
 
@@ -184,7 +184,7 @@ export function ConnectSourceSheet({
               <>
                 <Field label="URL" required>
                   <Input
-                    placeholder="https://competitor.com/blog"
+                    placeholder="https://codesignal.com/blog"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                   />

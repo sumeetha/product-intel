@@ -5,24 +5,24 @@ const h = (hours: number) => new Date(Date.now() - hours * 3600000).toISOString(
 export const threads: Thread[] = [
   {
     id: "thread-1",
-    title: "What did Linear ship this month?",
-    subscriptionScope: "sub-linear",
+    title: "What did CodeSignal ship this month?",
+    subscriptionScope: "sub-codesignal",
     updatedAt: h(2),
     messages: [
       {
         id: "m1",
         role: "user",
-        content: "What did Linear ship this month?",
+        content: "What did CodeSignal ship this month?",
         timestamp: h(2.1),
       },
       {
         id: "m2",
         role: "assistant",
         content:
-          "This month Linear shipped three notable updates:\n\n1. **AI Triage** — automatic labeling, duplicate detection, and suggested assignees for incoming issues.\n2. **API v2 bulk operations** — batch create/update/archive for up to 100 issues per request.\n3. **Cycle automation improvements** — smarter rollover rules for incomplete work.\n\nThe AI Triage launch is the highest-signal change for competitive positioning — it moves Linear toward autonomous workflow management.",
+          "CodeSignal shipped three notable updates this month:\n\n1. **Cosmo AI Interviewer (GA)** — adaptive, AI-led first-round interviews with structured scorecards.\n2. **Workday Recruiting deepened integration** — two-way scorecards, role-to-assessment mapping, and SCIM.\n3. **Bundled Develop + Hire pricing cut 30%** for accounts with 500+ technical seats.\n\nCosmo is the highest-signal move — it reframes AI from a feature to the interviewer itself and directly pressures our CodePair positioning. The pricing cut also targets our enterprise renewal cohort.",
         citations: [
-          { id: "tc1", sourceId: "src-2", sourceName: "Linear Changelog RSS", sourceType: "feed", excerpt: "AI Triage automatically routes issues based on historical patterns.", url: "https://linear.app/changelog" },
-          { id: "tc2", sourceId: "src-23", sourceName: "Linear docs — API reference", sourceType: "web", excerpt: "Bulk operations support up to 100 issues per request.", url: "https://linear.app/docs/api" },
+          { id: "tc1", sourceId: "src-2", sourceName: "CodeSignal product changelog RSS", sourceType: "feed", excerpt: "Cosmo is now generally available — conduct AI-led interviews with adaptive follow-up questions.", url: "https://codesignal.com/blog" },
+          { id: "tc2", sourceId: "src-1", sourceName: "codesignal.com/blog", sourceType: "web", excerpt: "Bundled Develop + Hire pricing is now 30% lower for organizations with 500+ technical seats.", url: "https://codesignal.com/blog" },
         ],
         timestamp: h(2),
       },
@@ -30,24 +30,25 @@ export const threads: Thread[] = [
   },
   {
     id: "thread-2",
-    title: "Top customer complaints about onboarding",
-    subscriptionScope: "sub-onboarding",
+    title: "What are recruiters saying about AI cheating?",
+    subscriptionScope: "sub-ai-cheating",
     updatedAt: h(5),
     messages: [
       {
         id: "m3",
         role: "user",
-        content: "What are the top customer complaints about onboarding?",
+        content: "What are recruiters saying about AI cheating on coding assessments?",
         timestamp: h(5.2),
       },
       {
         id: "m4",
         role: "assistant",
         content:
-          "The top onboarding complaints this quarter are:\n\n1. **Team invite failures** (42% ticket spike) — IT-gated domains don't receive invite emails; users expect Google Workspace auto-provisioning.\n2. **Integration step confusion** (38% wizard drop-off) — unclear which integrations are required vs optional at setup.\n3. **Time-to-first-value** — enterprise NPS cites 3+ days before teams see value vs competitors' guided templates.\n\nRecommended focus: fix invite flow for SSO domains and add a 'skip for now' path on integrations.",
+          "AI cheating is now the **#1 topic** in your recruiter-voice and enterprise-QBR sources this quarter. Three themes:\n\n1. **Detection trust collapsed** — recruiters say HackerRank and CodeSignal both fail to flag obvious Cursor/Copilot usage; some teams have reverted to live-only screens.\n2. **Renewal risk** — 4 enterprise QBRs last week paused expansion pending a written roadmap commitment on GenAI detection.\n3. **Community noise** — viral HN post (1.2k points) on \"acing HackerRank with Cursor\" is being shared in recruiter Slack channels.\n\nThe gap recruiters describe is signal integrity, not feature parity — keystroke cadence, paste-burst, and intent prompts are what they expect from us.",
         citations: [
-          { id: "tc3", sourceId: "src-16", sourceName: "Intercom — onboarding tags", sourceType: "feed", excerpt: "Can't invite colleagues — says pending but they never get email." },
-          { id: "tc4", sourceId: "src-25", sourceName: "Setup wizard screen recordings", sourceType: "video", excerpt: "User hovers over Slack, Jira, GitHub — closes tab without connecting any." },
+          { id: "tc3", sourceId: "src-10", sourceName: "HN Algolia — \"AI cheating coding interview\"", sourceType: "feed", excerpt: "Cursor + a clean keyboard cadence got me through every proctored screen I sat last month." },
+          { id: "tc4", sourceId: "src-6", sourceName: "Gong — Enterprise QBR calls", sourceType: "audio", excerpt: "We can't justify renewing if candidates are still slipping through with ChatGPT." },
+          { id: "tc5", sourceId: "src-15", sourceName: "Reddit r/recruiting & r/cscareerquestions", sourceType: "feed", excerpt: "We dropped HackerRank screens entirely — went back to live CoderPad sessions." },
         ],
         timestamp: h(5),
       },
@@ -55,23 +56,24 @@ export const threads: Thread[] = [
   },
   {
     id: "thread-3",
-    title: "Notion vs us on AI pricing",
+    title: "How does CoderPad's IDE compare to CodePair?",
     updatedAt: h(24),
     messages: [
       {
         id: "m5",
         role: "user",
-        content: "How does Notion's AI pricing compare to ours?",
+        content: "How does CoderPad's new VS Code experience compare to our CodePair?",
         timestamp: h(24.2),
       },
       {
         id: "m6",
         role: "assistant",
         content:
-          "Notion recently removed AI usage caps on Business and Enterprise plans (previously 20 responses/member/month). This is a significant competitive move — they're bundling unlimited AI to counter Microsoft Copilot.\n\nOur current model charges $10/user/mo as an add-on with a 50-query cap on Pro. Enterprise buyers in Gong calls have mentioned Notion's bundling as a renewal risk.\n\nConsider: matching unlimited AI on Business tier or repositioning AI as core platform value.",
+          "CoderPad just shipped a **native VS Code Sandbox** for live interviews — candidates get a real workspace with extensions and Git inside the interview. This closes a long-standing realism gap and is being cited in two enterprise win/loss interviews this month.\n\nOur CodePair still wins on:\n- **Question library depth** — G2 shows 4.6 vs CoderPad's 3.9 on \"assessment library\"\n- **Bundled scoring & analytics** — CoderPad asks teams to bolt on reporting\n\nWe lose on:\n- **\"Feels like real engineering work\"** — VS Code + extensions is a strong narrative for senior IC interviews\n- **G2 interviewer experience** — CoderPad 4.7 vs our 4.3\n\nRecommended counter: prioritize the VS Code-in-CodePair spike on the platform roadmap and brief sales on the library + analytics differentiator.",
         citations: [
-          { id: "tc5", sourceId: "src-1", sourceName: "notion.so/blog", sourceType: "web", excerpt: "Removing AI usage caps on Business and Enterprise plans.", url: "https://notion.so/blog" },
-          { id: "tc6", sourceId: "src-6", sourceName: "Gong — Enterprise QBR calls", sourceType: "audio", excerpt: "Notion threw in unlimited AI — hard to justify your per-seat AI add-on." },
+          { id: "tc6", sourceId: "src-23", sourceName: "CoderPad docs — API & integrations", sourceType: "web", excerpt: "Live Sandboxes now boot a real VS Code workspace per candidate with extensions and Git.", url: "https://coderpad.io/docs" },
+          { id: "tc7", sourceId: "src-3", sourceName: "G2 — CoderPad Reviews (PDF export)", sourceType: "document", excerpt: "Smoothest live coding I've run, but their question bank is thin — we still license HackerRank for screens." },
+          { id: "tc8", sourceId: "src-24", sourceName: "Enterprise win/loss interview notes", sourceType: "document", excerpt: "Their VS Code sandbox sealed it for our senior backend loop." },
         ],
         timestamp: h(24),
       },

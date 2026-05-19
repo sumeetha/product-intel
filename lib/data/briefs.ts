@@ -6,87 +6,105 @@ export const briefs: Brief[] = [
   {
     id: "brief-1",
     title: "Weekly Competitor Brief",
-    description: "Notion, Linear, Asana, ClickUp — product moves, pricing, and positioning",
+    description: "CodeSignal, CoderPad, Codility, HackerEarth — product moves, pricing, and positioning",
     schedule: "Every Monday 8:00 AM",
     lastSent: d(2),
     channels: ["email", "slack"],
-    coverGradient: "from-indigo-500 to-violet-600",
-    markdown: `## Weekly Competitor Brief — May 12, 2026
+    coverGradient: "from-rose-500 to-orange-500",
+    markdown: `## Weekly Competitor Brief — May 18, 2026
 
 ### Executive summary
-High-signal week: Linear's AI Triage launch and Notion's unlimited AI bundling are the two moves requiring immediate response.
+High-signal week: CodeSignal's **Cosmo AI Interviewer GA** and CoderPad's **native VS Code Sandbox** are the two moves requiring immediate response. Codility is doubling down on "trust & integrity" positioning in EMEA.
 
-### Linear
-- Shipped **AI Triage** for automatic issue routing — watch for enterprise pilots
-- API v2 bulk operations enable heavier migration tooling
-- G2 reviews: leads on ease of use, weak on reporting (our opportunity)
+### CodeSignal
+- **Cosmo AI Interviewer** went GA — adaptive AI-led first rounds, structured scorecards
+- Bundled Develop + Hire pricing cut **30%** for 500+ seat accounts (renewal cohort risk)
+- Workday Recruiting integration deepened — two-way scorecards + SCIM
 
-### Notion
-- Removed AI caps on Business/Enterprise — direct competitive threat to our AI add-on
-- Calendar two-way Google sync increases platform stickiness
+### CoderPad
+- Shipped native **VS Code Sandbox** for live interviews (closes realism gap)
+- Bulk candidate provisioning API ships — accelerates ATS partner integrations
+- G2: leads on interviewer UX (4.7), trails on library depth (3.9 vs our 4.6)
 
-### Asana
-- Smart Goals with AI progress tracking targets OKR buyers
-- CEO cited AI driving 15% of enterprise upsells on earnings call
+### Codility
+- CEO call: plagiarism + GenAI detection cited in **40% of EMEA wins**
+- Repositioning around "signal integrity" — directly anchors on AI cheating narrative
+
+### HackerEarth
+- Pricing page scraping blocked — likely intentional. Last seen: aggressive $199/mo SMB bundle
 
 ### Recommended actions
-1. Brief sales on Notion AI bundling talk track
-2. Accelerate reporting roadmap narrative for enterprise deals
-3. Monitor Linear AI Triage adoption via G2/job postings`,
+1. Brief sales on Cosmo positioning vs CodePair (focus: library depth + analytics)
+2. Pull forward the VS Code-in-CodePair spike (CoderPad parity)
+3. Lock in roadmap commitments on GenAI detection for top 10 renewal accounts`,
     citations: [
-      { id: "bc1", sourceId: "src-2", sourceName: "Linear Changelog RSS", sourceType: "feed", excerpt: "AI Triage launch announcement" },
-      { id: "bc2", sourceId: "src-1", sourceName: "notion.so/blog", sourceType: "web", excerpt: "Unlimited AI on Business tier" },
+      { id: "bc1", sourceId: "src-2", sourceName: "CodeSignal product changelog RSS", sourceType: "feed", excerpt: "Cosmo is now generally available." },
+      { id: "bc2", sourceId: "src-23", sourceName: "CoderPad docs — API & integrations", sourceType: "web", excerpt: "Live Sandboxes now boot a real VS Code workspace." },
+      { id: "bc3", sourceId: "src-21", sourceName: "Codility press releases (RSS)", sourceType: "feed", excerpt: "Trust and integrity layer part of 40% of EMEA wins." },
     ],
   },
   {
     id: "brief-2",
     title: "Customer Voice — Q2",
-    description: "Enterprise & SMB themes from Gong, Zendesk, NPS, and surveys",
+    description: "Enterprise & recruiter themes from Gong, Zendesk, NPS, and survey data",
     schedule: "First of month",
     lastSent: d(18),
     channels: ["email"],
-    coverGradient: "from-emerald-500 to-teal-600",
+    coverGradient: "from-violet-500 to-fuchsia-600",
     markdown: `## Customer Voice — Q2 2026
 
 ### Top themes
-1. **Onboarding friction** — invite flow and integration step confusion
-2. **Migration tooling** — Jira import requested 23× in NPS verbatims
-3. **Price sensitivity** — SMB churn citing per-seat cost vs ClickUp free tier
+1. **AI cheating detection** — top concern in 4 enterprise QBRs, 412-comment Reddit thread, 31 NPS verbatims
+2. **Role-based assessment auto-builder** — 31 NPS mentions request "paste JD → assessment in one click"
+3. **Reporting & analytics** — 18 recruiter-survey responses cite "can't slice results by role/cohort"
 
 ### Enterprise segment
-- Win/loss: Linear's perceived speed cited in 3 accounts
-- Renewal risk: Notion AI bundling mentioned on 2 QBR calls
+- Renewal risk on 4 accounts pending GenAI detection roadmap commitment
+- Win/loss: CoderPad's VS Code Sandbox cited in 2 senior-IC loss interviews
+- Workday SCIM gap closed by CodeSignal — mentioned on 3 QBRs
 
-### SMB segment
-- 12 cancellations cited price over features
-- Reddit/community mentions increasing for "free alternatives"`,
+### Recruiter segment
+- Codility's new analytics layer referenced by name in surveys
+- Greenhouse Marketplace reviews tilting on \"customer support response time\"
+- Several teams have reverted to live-only screens to avoid AI detection issues
+
+### Strategic implications
+- Trust / signal-integrity is becoming the new battleground (was: question library)
+- "AI to grade vs AI to detect" framing is open — we can own one or the other`,
     citations: [
-      { id: "bc3", sourceId: "src-8", sourceName: "NPS verbatim dump Q2", sourceType: "document", excerpt: "Jira migration path requested 23 times" },
-      { id: "bc4", sourceId: "src-14", sourceName: "Cancellation survey CSV", sourceType: "document", excerpt: "Price sensitivity in 12 surveys" },
+      { id: "bc4", sourceId: "src-8", sourceName: "NPS verbatim dump Q2", sourceType: "document", excerpt: "Paste a JD, get a role-tuned assessment in one click." },
+      { id: "bc5", sourceId: "src-14", sourceName: "Q2 recruiter survey (CSV)", sourceType: "document", excerpt: "Codility's new dashboards do this out of the box." },
+      { id: "bc6", sourceId: "src-6", sourceName: "Gong — Enterprise QBR calls", sourceType: "audio", excerpt: "Can't justify renewing if candidates slip through with ChatGPT." },
     ],
   },
   {
     id: "brief-3",
-    title: "AI Productivity Landscape",
-    description: "Cross-source digest on AI agents, copilots, and automation in PM",
+    title: "GenAI in Technical Interviews",
+    description: "Cross-source digest on AI cheating, proctoring tools, and skills-based hiring",
     schedule: "Bi-weekly",
     lastSent: d(5),
     channels: ["slack", "in_app"],
-    coverGradient: "from-sky-500 to-blue-600",
-    markdown: `## AI Productivity Landscape — May 2026
+    coverGradient: "from-red-500 to-rose-700",
+    markdown: `## GenAI in Technical Interviews — May 2026
 
 ### Market signals
-- HN viral post on AI agents replacing standups — 400+ comments
-- 4 new AI PM copilots on Product Hunt this week
-- Asana and Linear both doubling down on "AI teammate" positioning
+- Viral HN post on \"acing HackerRank with Cursor\" — 1.2k points, 412 comments
+- 3 new AI-detector startups launched on Product Hunt (ProctorIQ, HonestyAI, ClearScreen)
+- Codility doubling down on **\"signal integrity\"** as brand pillar
+- JPMorgan drops degree requirements for 60% of engineering roles — names \"verified skills assessments\" as replacement
 
-### Implications for us
-- Buyers expect AI to be **bundled**, not add-on priced
-- Autonomous agents for status/blockers becoming table stakes
-- Compliance story still weak among startups — our enterprise trust is a moat`,
+### Implications for HackerRank
+- **Detection** is the new buying criterion in enterprise — not library size
+- Smaller AI-detector startups are likely acquisition targets within 12 months
+- Skills-based hiring tailwind plays well for **Skills Certifications** — under-marketed today
+- Live-coding share-of-screen is rising as teams hedge against AI cheating — opportunity for CodePair if we close the VS Code gap
+
+### Recommended narrative
+"AI-assisted interviewing without AI-assisted cheating" — a positioning hook that combines our Cosmo-equivalent + first-class detection.`,
     citations: [
-      { id: "bc5", sourceId: "src-10", sourceName: "HN Algolia — AI agents", sourceType: "feed", excerpt: "AI agents replaced our standup" },
-      { id: "bc6", sourceId: "src-9", sourceName: "Product Hunt — AI tools feed", sourceType: "feed", excerpt: "4 new AI PM copilots launched" },
+      { id: "bc7", sourceId: "src-10", sourceName: "HN Algolia — \"AI cheating coding interview\"", sourceType: "feed", excerpt: "Cursor + a clean keyboard cadence got me through every screen." },
+      { id: "bc8", sourceId: "src-9", sourceName: "Product Hunt — proctoring & AI-detector feed", sourceType: "feed", excerpt: "3 new AI-detector startups launched this week." },
+      { id: "bc9", sourceId: "src-17", sourceName: "WSJ / TechCrunch — \"skills-based hiring\" feed", sourceType: "feed", excerpt: "JPMorgan will use verified skills assessments in place of degree screening." },
     ],
   },
 ];
