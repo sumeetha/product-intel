@@ -5,7 +5,7 @@ import type { Message, Citation } from "@/lib/types";
 import { CitationChip } from "@/components/citation-chip";
 import { CitationSheet } from "@/components/citation-sheet";
 import { cn } from "@/lib/utils";
-import ReactMarkdown from "react-markdown";
+import { Markdown } from "@/components/markdown";
 
 export function MessageBubble({ message }: { message: Message }) {
   const [selectedCitation, setSelectedCitation] = useState<Citation | null>(null);
@@ -26,9 +26,7 @@ export function MessageBubble({ message }: { message: Message }) {
           {isUser ? (
             <p className="whitespace-pre-wrap">{message.content}</p>
           ) : (
-            <div className="prose prose-sm dark:prose-invert max-w-none">
-              <ReactMarkdown>{message.content}</ReactMarkdown>
-            </div>
+            <Markdown size="sm">{message.content}</Markdown>
           )}
           {!isUser && message.citations && message.citations.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">

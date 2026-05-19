@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
 import { getBriefById } from "@/lib/data/briefs";
 import { CitationChip } from "@/components/citation-chip";
+import { ChannelIcons } from "@/components/channel-icons";
+import { Markdown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { formatRelativeTime } from "@/lib/utils";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 export default async function BriefDetailPage({
   params,
@@ -23,17 +25,33 @@ export default async function BriefDetailPage({
           Back to briefs
         </Link>
       </Button>
+
       <div className={`h-2 rounded-full bg-gradient-to-r ${brief.coverGradient}`} />
-      <header>
-        <h1 className="text-2xl font-bold">{brief.title}</h1>
-        <p className="text-muted-foreground">{brief.description}</p>
-        <p className="mt-2 text-sm text-muted-foreground">{brief.schedule}</p>
+
+      <header className="space-y-3">
+        <h1 className="text-3xl font-bold tracking-tight">{brief.title}</h1>
+        <p className="text-base text-muted-foreground">{brief.description}</p>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
+            <Calendar className="h-3.5 w-3.5" />
+            {brief.schedule}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <Clock className="h-3.5 w-3.5" />
+            Sent {formatRelativeTime(brief.lastSent)}
+          </span>
+          <ChannelIcons channels={brief.channels} />
+        </div>
       </header>
-      <article className="prose prose-neutral dark:prose-invert max-w-none">
-        <ReactMarkdown>{brief.markdown}</ReactMarkdown>
+
+      <hr className="border-border" />
+
+      <article>
+        <Markdown>{brief.markdown}</Markdown>
       </article>
-      <section>
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+
+      <section className="rounded-lg border bg-muted/30 p-4">
+        <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Citations
         </h2>
         <div className="flex flex-wrap gap-2">
