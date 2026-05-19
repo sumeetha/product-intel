@@ -114,8 +114,8 @@ function AskPageContent() {
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)]">
-      <aside className="hidden w-56 shrink-0 border-r lg:block">
-        <div className="p-3">
+      <aside className="hidden w-72 shrink-0 flex-col border-r bg-card/30 lg:flex">
+        <div className="border-b p-4">
           <Button
             variant="outline"
             className="w-full"
@@ -124,26 +124,40 @@ function AskPageContent() {
             New thread
           </Button>
         </div>
-        <ScrollArea className="h-[calc(100%-4rem)]">
-          <div className="space-y-1 p-2">
+        <div className="flex min-w-0 flex-1 flex-col overflow-y-auto p-3">
+          <p className="px-2 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Recent threads
+          </p>
+          <div className="flex min-w-0 flex-col gap-2">
             {threads.map((t) => (
-              <button
+              <div
                 key={t.id}
-                type="button"
+                role="button"
+                tabIndex={0}
                 onClick={() => setActiveThreadId(t.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveThreadId(t.id);
+                  }
+                }}
                 className={cn(
-                  "w-full rounded-lg px-3 py-2 text-left text-sm transition-colors",
-                  activeThreadId === t.id ? "bg-primary/10 text-primary" : "hover:bg-muted"
+                  "w-full min-w-0 cursor-pointer rounded-lg px-3 py-3 text-left text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  activeThreadId === t.id
+                    ? "bg-primary/10 text-primary"
+                    : "hover:bg-muted"
                 )}
               >
-                <p className="font-medium truncate">{t.title}</p>
-                <p className="text-xs text-muted-foreground truncate">
+                <p className="line-clamp-2 break-words font-medium leading-snug">
+                  {t.title}
+                </p>
+                <p className="mt-1.5 truncate text-xs text-muted-foreground">
                   {t.messages.length} messages
                 </p>
-              </button>
+              </div>
             ))}
           </div>
-        </ScrollArea>
+        </div>
       </aside>
 
       <div className="flex flex-1 flex-col min-w-0">
