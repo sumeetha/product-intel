@@ -22,7 +22,8 @@ Open [http://localhost:3000](http://localhost:3000).
 | `/subscriptions` | Competitors, customer segments, topics |
 | `/sources` | Web, documents, feeds, video, audio connectors |
 | `/briefs` | Scheduled digests |
-| `/settings` | Profile, channels, theme |
+| `/profile` | Identity, workspace, and intelligence activity (avatar menu, top-right) |
+| `/settings` | Notification channels, defaults, theme |
 
 ## Keyboard shortcut
 
