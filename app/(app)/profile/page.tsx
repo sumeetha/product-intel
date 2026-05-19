@@ -45,7 +45,7 @@ export default function ProfilePage() {
 
       {/* Hero card */}
       <Card className="overflow-hidden">
-        <div className="h-24 bg-gradient-to-r from-rose-500/20 via-violet-500/20 to-sky-500/20" />
+        <div className="h-24 bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/20" />
         <CardContent className="-mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-6">
           <Avatar className="h-20 w-20 ring-4 ring-card">
             <AvatarFallback className="bg-primary/10 text-primary text-xl">

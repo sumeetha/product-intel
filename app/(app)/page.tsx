@@ -42,7 +42,7 @@ export default function DashboardPage() {
 
   return (
     <div className="p-6 space-y-6 max-w-7xl mx-auto">
-      <div className="rounded-xl bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-background border p-6">
+      <div className="rounded-xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-background border p-6">
         <h1 className="text-2xl font-bold tracking-tight">Intelligence inbox</h1>
         <p className="mt-1 text-muted-foreground">
           {highSignalToday} high-signal update{highSignalToday !== 1 ? "s" : ""} today · {unreadCount} unread

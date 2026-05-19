@@ -10,7 +10,7 @@ export const briefs: Brief[] = [
     schedule: "Every Monday 8:00 AM",
     lastSent: d(2),
     channels: ["email", "slack"],
-    coverGradient: "from-rose-500 to-orange-500",
+    coverGradient: "from-emerald-500 to-green-600",
     markdown: `## Weekly Competitor Brief — May 18, 2026
 
 ### Executive summary
@@ -50,7 +50,7 @@ High-signal week: CodeSignal's **Cosmo AI Interviewer GA** and CoderPad's **nati
     schedule: "First of month",
     lastSent: d(18),
     channels: ["email"],
-    coverGradient: "from-violet-500 to-fuchsia-600",
+    coverGradient: "from-teal-500 to-cyan-600",
     markdown: `## Customer Voice — Q2 2026
 
 ### Top themes
@@ -84,7 +84,7 @@ High-signal week: CodeSignal's **Cosmo AI Interviewer GA** and CoderPad's **nati
     schedule: "Bi-weekly",
     lastSent: d(5),
     channels: ["slack", "in_app"],
-    coverGradient: "from-red-500 to-rose-700",
+    coverGradient: "from-orange-500 to-rose-600",
     markdown: `## GenAI in Technical Interviews — May 2026
 
 ### Market signals
